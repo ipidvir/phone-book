@@ -1,30 +1,42 @@
-<div id="menu" class="row">
-   <div class="col-sm-3 col-md-2 sidebar">
+<div id="menu" class="row contact-nav">
+   
+   <div class="col-sm-3 col-md-3 sidebar">
       <form class="navbar-form navbar-left">
-      <input type="text" class="form-control" placeholder="Search..." ng-model="phonebookApp.searchQuery">
+      <label class="control-label" for="categoryselect">Search: </label>
+      <input type="text" class="form-control" placeholder="Search for contacts..." ng-model="phonebookApp.searchQuery">
       </form>
    </div>
-   <div class="col-sm-3 col-md-2 sidebar">
+   <div class="col-sm-3 col-md-3 sidebar">
       <form class="navbar-form navbar-left">
-      <select ng-model="phonebookApp.search.group" class="form-control">
-         <option value="">-Select Group -</option>
+      <label class="control-label" for="categoryselect">Group: </label>
+      <select ng-model="phonebookApp.search.group" class="form-control"> 
+         <option value="">-All Groups -</option>
+         <option ng-repeat="group in phonebook.groupList" 
+         value="{{group.name}}">{{group.name}}</option>
+
+        <!-- 
+         <option value="">-Group -</option>
          <option value="VIP">VIP</option>
          <option value="Work">Work</option>
          <option value="Friends">Friends</option>
-         <option value="Family">Family</option>
+         <option value="Family">Family</option> -->
       </select>
       </form>
    </div>
-   <div class="col-sm-3 col-md-2 sidebar">
+   <div class="col-sm-3 col-md-3 sidebar">
       <form class="navbar-form navbar-left">
+      <label class="control-label" for="categoryselect">Status: </label>
       <select ng-model="phonebookApp.search.enable" class="form-control">
-         <option value="">-Select Status -</option>
+         <option value="">-Status -</option>
          <option value="true">Enable</option>
          <option value="false">Disable</option>
       </select>
       </form>
    </div>
-   <div class="col-sm-3 col-md-2 sidebar">
+   <div class="col-sm-2 col-md-2 sidebar">
+   </div>
+
+   <div class="col-sm-1 col-md-1 sidebar">
       <form class="navbar-form navbar-left">
       <button type="button" class="btn btn-success" ng-click="phonebook.openModalWin()">Add New</button>
       </form>

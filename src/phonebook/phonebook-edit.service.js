@@ -10,7 +10,7 @@
     function bookEditService($uibModal) {
       var modalWindow = {};
 
-      modalWindow.edit = function (book) {
+      modalWindow.edit = function (book, groupList) {
          return $uibModal.open({
             animation: true,
             templateUrl:  './tmpl_html/editBook.htm',
@@ -19,13 +19,16 @@
             resolve: {
                paramBook: function () {
                   return angular.copy(book);
+                  },
+               groupList: function () {
+                  return groupList;
                   }
                }
             });
 
         };
 
-      modalWindow.delete = function (book) {
+      modalWindow.delete = function (book, groupList) {
          return $uibModal.open({
             animation: true,
             templateUrl:  './tmpl_html/deleteBook.htm',
@@ -34,6 +37,9 @@
             resolve: {
                paramBook: function () {
                   return angular.copy(book);
+                  },
+               groupList: function () {
+                  return groupList;
                   }
                }
             });

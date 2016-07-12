@@ -8,6 +8,15 @@
     bookService.$inject = ['$q'];
 
     function bookService($q) {
+        var group = [ 
+         {'name': 'Family', id: 1,}, 
+         {'name': 'Friends', id: 2,}, 
+         {'name': 'VIP', id: 3,}, 
+         {'name': 'Work', id: 4,}, 
+         {'name': 'Holiday', id: 5,}
+         ] ;
+
+
         var list = [
           {
             'name': 'Jean-Claude Van Damme',
@@ -16,7 +25,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+38973332211',
+            'phone': 380973332211,
             'group': 'Work',
             'enable': true,
             'id': '1'
@@ -27,7 +36,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+38639998877',
+            'phone': 380639998877,
             'group': 'VIP',
             'enable': true,
             'id': '2'
@@ -38,7 +47,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+380962001030',
+            'phone': 380962001030,
             'group': 'Friends',
             'enable': true,
             'id': '3'
@@ -49,7 +58,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+380636000001',
+            'phone': 380636000001,
             'group': 'Friends',
             'enable': true,
             'id': '4'
@@ -60,7 +69,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+380961234567',
+            'phone': 380961234567,
             'group': 'Work',
             'enable': true,
             'id': '5'
@@ -71,14 +80,14 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+380503005021',
+            'phone': 380503005021,
             'group': 'Friends',
             'enable': false,
             'id': '6'
           }, {
             'name': 'Steven Spielberg',
             'email': 'ss@gmail.com',
-            'phone': '+380969696966',
+            'phone': 380969696966,
             'image': {
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
@@ -93,7 +102,7 @@
                   orgn: 'img/user_profile.png',
                   thumb: 'img/user_profile_thumb.png'
                },
-            'phone': '+380965544333',
+            'phone': 380965544333,
             'group': 'Family',
             'enable': true,
             'id': '8'
@@ -114,6 +123,10 @@
             // return defer.promise;
 
             return $q.when(list);
+        };
+        bookServiceClass.getAllGroups = function () {
+            console.log( "bookService: getAllGroups()");
+            return $q.when(group);
         };
 
 
