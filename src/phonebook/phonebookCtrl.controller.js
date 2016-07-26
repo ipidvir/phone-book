@@ -19,11 +19,16 @@
          vm.phonebookList = response;
       });
 
+      bookService.getAllGroups().then(function (response) {
+         console.log('bookCtrl: call getAllGroups()');
+         vm.groupList = response;
+      });
+
 
       vm.openModalWin = function (index, book) {
          var modalInstance = bookEditService.edit(book);
 
-         modalInstance.result.then(function (paramBook) {
+         modalInstance.result.then(function (paramBook, groupList) {
             //console.log('bookCtrl:paramBook=' + paramBook);
             //console.log('bookCtrl:index=' + index);
             if (index >= 0) {
@@ -43,7 +48,7 @@
       vm.delModalWin = function (index, book) {
          var modalInstance = bookEditService.delete(book);
 
-         modalInstance.result.then(function (paramBook) {
+         modalInstance.result.then(function (paramBook, groupList) {
             if (index >= 0) {
                bookService.deleteBook(index, paramBook).then(function (response) {
                console.log('bookCtrl: call DELETE()');
@@ -53,8 +58,11 @@
             }
          });
       }
-
-
+       
+      vm.modalGroupList = function (groupid) {
+         return vm.groupList[groupid];
+      };
+      
 
    }
 

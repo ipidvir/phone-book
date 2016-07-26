@@ -4,12 +4,13 @@
         .module('phonebookApp')
         .controller('modalWinCtrl', modalWinCtrl);
 
-    modalWinCtrl.$inject = ['$scope', '$uibModalInstance', 'paramBook'];
+    modalWinCtrl.$inject = ['$scope', '$uibModalInstance', 'paramBook', 'groupList'];
 
-    function modalWinCtrl($scope, $uibModalInstance, paramBook) {
+    function modalWinCtrl($scope, $uibModalInstance, paramBook, groupList) {
         var vm = this;
         console.log('modalWinCtrl: show modal');
         vm.book = paramBook;
+        vm.groupList = groupList;
 
         vm.ok = function () {
             $uibModalInstance.close(vm.book);
