@@ -1,0 +1,91 @@
+[
+  {
+    "name": "J-C Van Damme",
+    "email": "jcvd@gmail.com",
+    "image": {
+      "orgn": "img/user_profile.png",
+      "thumb": "img/user_profile_thumb.png"
+    },
+    "phone": 380973332211,
+    "group": "Work",
+    "enable": true,
+    "id": "1"
+  }, {
+  "name": "Jackie Chan",
+  "email": "jchan@gmail.com",
+  "image": {
+    "orgn": "img/user_profile.png",
+    "thumb": "img/user_profile_thumb.png"
+  },
+  "phone": 380639998877,
+  "group": "VIP",
+  "enable": true,
+  "id": "2"
+}, {
+  "name": "Taylor Swift",
+  "email": "tswift@gmail.com",
+  "image": {
+    "orgn": "img/user_profile.png",
+    "thumb": "img/user_profile_thumb.png"
+  },
+  "phone": 380962001030,
+  "group": "Friends",
+  "enable": true,
+  "id": "3"
+}, {
+  "name": "Justin Bieber",
+  "email": "jdbieber@gmail.com",
+  "image": {
+    "orgn": "img/user_profile.png",
+    "thumb": "img/user_profile_thumb.png"
+  },
+  "phone": 380636000001,
+  "group": "Friends",
+  "enable": true,
+  "id": "4"
+}, {
+  "name": "Jim Carrey",
+  "email": "jimcarrey@gmail.com",
+  "image": {
+    "orgn": "img/user_profile.png",
+    "thumb": "img/user_profile_thumb.png"
+  },
+  "phone": 380961234567,
+  "group": "Work",
+  "enable": true,
+  "id": "5"
+}, {
+  "name": "Abraham Lincoln",
+  "email": "alink@gmail.com",
+  "image": {
+    "orgn": "img/user_profile.png",
+    "thumb": "img/user_profile_thumb.png"
+  },
+  "phone": 380503005021,
+  "group": "Friends",
+  "enable": false,
+  "id": "6"
+}, {
+  "name": "Steven Spielberg",
+  "email": "ss@gmail.com",
+  "phone": 380969696966,
+  "image": {
+    "orgn": "/img/user_profile.png",
+    "thumb": "./img/user_profile_thumb.png"
+  },
+  "group": "Work",
+  "enable": true,
+  "id": "7"
+}, {
+  "name": "Adam Sandler",
+  "email": "adamek@gmail.com",
+  "image": {
+    "orgn": "./img/user_profile.png",
+    "thumb": "/img/user_profile_thumb.png"
+  },
+  "phone": 380965544333,
+  "group": "Family",
+  "enable": true,
+  "id": "8"
+}
+]

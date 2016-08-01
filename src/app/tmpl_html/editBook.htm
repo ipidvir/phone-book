@@ -1,0 +1,61 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" ng-hide="!editBookForm.book.id" >Edit: <span>"{{editBookForm.book.name}} "</span></h3>
+    <h3 class="modal-title" ng-hide="editBookForm.book.id" >Add New Phonebook </span></h3>
+    <h7></h7>
+</div>
+<div class="modal-body">
+    <form name="editForm" class="navbar-form navbar-left">
+        <div class="formEditBook" ng-if="editBookForm.book.id">
+            <label for="bookName">ID:</label>
+            <input id="bookId" class="form-control" type="text" ng-model="editBookForm.book.id" readonly>
+        </div>
+        <div class="formEditBook">
+            <label for="bookName">Name:</label>
+            <input name="bookName" class="form-control" type="text" required ng-model="editBookForm.book.name">
+            <label class="FilterError" ng-show="editForm.bookName.$invalid && editForm.bookName.$dirty">
+              Field is mandatory 
+            </label>
+        </div>
+        <div class="formEditBook">
+            <label for="bookEmail">Email:</label>
+            <input name="bookEmail" class="form-control" type="email" required ng-model="editBookForm.book.email">
+    
+            <label class="FilterError" ng-show="editForm.bookEmail.$invalid && editForm.bookEmail.$dirty">
+              Please enter a valid email address 
+            </label>
+        </div>
+        <div class="formEditBook">
+            <label for="bookPhone">Phone:</label>
+            <input name="bookPhone" class="form-control" type="number" required ng-model="editBookForm.book.phone">
+            <label class="FilterError" ng-show="editForm.bookPhone.$invalid && editForm.bookPhone.$dirty">
+              Only number is allowed 
+            </label>
+        </div>
+        <div class="formEditBook">
+            <label for="bookGroup">GroupA:</label>
+            <!--<input id="bookGroup" class="form-control" type="text"  ng-model="editBookForm.book.group">-->
+      <select ng-model="editBookForm.book.group" class="form-control">-->
+         <option value="VIP">VIP</option>
+         <option value="Work">Work</option>
+         <option value="Friends">Friends</option>
+         <option value="Family">Family</option>
+         <option value="Holiday">Holiday</option>
+      </select>
+          <!--
+             <select ng-model="ng-model="editBookForm.book.group"" class="form-control">
+               <input id="bookGroup" class="form-control" type="text"  ng-model="editBookForm.book.group">
+               <option ng-repeat="group in editBookForm.phonebookGroup" value="{{group.name}}">{{group.name}}</option>
+               </select>
+          -->
+        </div>
+        <div class="formEditBook">
+            <label for="bookEnable">Enable:</label>
+            <input id="bookEnable" class="form-control" type="checkbox"  ng-model="editBookForm.book.enable" ng-checked="editBookForm.book.enable? true : false "
+            >
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="editBookForm.ok()" ng-disabled="editForm.$invalid">Ok</button>
+    <button class="btn btn-default" ng-click="editBookForm.cancel()">Cancel</button>
+</div>

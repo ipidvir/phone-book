@@ -1,0 +1,8 @@
+[
+  {"name": "Family", "id": 1},
+  {"name": "Friends", "id": 2},
+  {"name": "VIP", "id": 3},
+  {"name": "Work", "id": 4},
+  {"name": "Holiday", "id": 5},
+  {"name": "Unknown", "id": 6}
+]

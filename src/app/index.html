@@ -1,0 +1,102 @@
+<!DOCTYPE html >
+<html ng-app = "PhonebookApp">
+<head >
+    <meta charset="UTF-8">
+    <title>Phonebook (es6)</title>
+    <!-- bower:css -->
+    <!-- bower installed css files will go here... -->
+    <!-- endinject -->
+    <!-- customCss:css -->
+    <!-- built css files will go here... -->
+    <!-- endinject -->
+</head>
+<body >
+<div class="wrapper" >
+
+
+    <div class="container-fluid" ng-controller = "PhonebookCtrl as phonebook" >
+        <div class="main-header">
+            <!-- sub-header -->
+            <div class="sub-header">
+                <p>
+                    AngularJS <span>| Training Project</span>
+                    <span class='about'>Controller:{{phonebook.title}}</span>
+                </p>
+            </div>
+            <h1>PhoneBook Manager</h1>
+
+        </div>
+
+        <div class="main-content">
+            <nav-menu></nav-menu>
+
+
+            <div class="contact-table">
+                <table class="table table-striped table-hover">
+                    <thead><tr>
+                        <th class='tID'><a href="" ng-click="orderByField='id'; reverseSort = !reverseSort">
+                            ID<span ng-show="orderByField == 'id'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tImg'></th>
+                        <th class='tName'><a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">
+                            Name <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tPhone'><a href="" ng-click="orderByField='phone'; reverseSort = !reverseSort">
+                            Phone Number <span ng-show="orderByField == 'phone'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tGroup'><a href="" ng-click="orderByField='group'; reverseSort = !reverseSort">
+                            Group <span ng-show="orderByField == 'group'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tEmail'><a href="" ng-click="orderByField='email'; reverseSort = !reverseSort">
+                            Email <span ng-show="orderByField == 'email'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tEnable'><a href="" ng-click="orderByField='enable'; reverseSort = !reverseSort">
+                            Enable <span ng-show="orderByField == 'enable'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a></th>
+                        <th class='tBtn'>Edit</th>
+                        <th class='tBtn'>Delete</th>
+                    </tr></thead>
+                    <tbody>
+                    <tr ng-class="$even?'alternate':'even'" ng-repeat="book in phonebook.phonebookList |orderBy:orderByField:reverseSort | filter: phonebook.searchQuery | filter: PhonebookApp.search.group | filter: PhonebookCtrl.search.enable">
+                        <td class="cntr">{{book.id}}</td>
+                        <td><img ng-src="{{book.image.thumb}}" class='thumb'/></td>
+                        <td>{{book.name}}</td>
+                        <td>{{book.phone}}</td>
+                        <td>{{book.group}}</td>
+                        <td>{{book.email}}</td>
+                        <td class="cntr">{{book.enable}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info" ng-click="phonebook.openModalWin($index, book)">Edit</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" ng-click="phonebook.delModalWin($index, book)">Delete</button>
+                        </td>
+                    </tr></tbody>
+                </table>
+            </div> <!-- contact-table -->
+
+        </div> <!-- main-content -->
+
+
+        <div class="main-footer">
+            <p>
+                Powered by <span> Igor Pidvirny</span>
+                <span class='about'>© 2016 All rights reserved</span>
+            </p>
+        </div>
+
+    </div> <!-- container-fluid -->
+
+</div> <!-- wrapper -->
+
+<!-- bower:js -->
+<!-- endinject -->
+
+<!-- bundle:js -->
+<!-- endinject -->
+
+<!-- templates:js -->
+<!-- endinject -->
+
+</body>
+</html>
