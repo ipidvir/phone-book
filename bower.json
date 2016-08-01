@@ -1,12 +1,20 @@
 {
-  "name": "apb",
+  "name": "es6Angular",
+  "version": "0.0.0",
   "authors": [
-    "igorek <ipidvir@gmail.com>"
+    "RobertSabiryanov <robert.sabiryanov@gmail.com>"
   ],
-  "description": "",
-  "main": "",
+  "description": "using Es6 in AngularJs example",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "Es6",
+    "AngularJs",
+    "babel",
+    "browserify"
+  ],
   "license": "MIT",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,9 +23,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "angular": "^1.5.7",
-    "angular-route": "^1.5.7",
-    "angular-resource": "^1.5.7"
+    "angular": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "angular-route": "~1.4.3",
+    "bootstrap": "~3.3.5"
   }
 }
